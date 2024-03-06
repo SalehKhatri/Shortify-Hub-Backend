@@ -1,0 +1,1 @@
+<h1>Shortify backend</h1>
