@@ -3,6 +3,7 @@ const {handleGenerateNewShortURL,handleGetLink, handleRedirectURL, handleAnalyti
 const router=express.Router();
 const {authUser}=require("../middleware/authUser")
 
+router.get('/hello',(req, res)=>res.send("Hello"))
 router.post('/createUrl',authUser,handleGenerateNewShortURL);
 router.get('/:shortId',handleRedirectURL);
 router.get('/analytics/getLinks',authUser,handleGetLink)

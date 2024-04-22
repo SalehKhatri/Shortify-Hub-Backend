@@ -13,12 +13,12 @@ const app=express();
 app.use(express.json())
 app.use(cors());
 
-const PORT=8080;
+const PORT=process.env.PORT || 3000;;
 
 connectToDB(uri)
 .then(console.log("Connected to mongodb!!!"));
 
-app.listen(PORT,()=>console.log(`Server started on http://localhost:${PORT}/ `));
+app.listen(PORT, "0.0.0.0");
 
 app.use('/',urlRoute);
 app.use('/user',userRoute);
